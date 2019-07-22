@@ -1,14 +1,38 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Choose your plan
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <ion-item>
+      <ion-label position="floating" type="text">Enter First Name</ion-label>
+      <ion-input [(ngModel)]="subscriber.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" type="text">Enter Surname</ion-label>
+      <ion-input [(ngModel)]="subscriber.surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" type="email">Enter E-mail</ion-label>
+      <ion-input [(ngModel)]="subscriber.email"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let plan of plans">
+          <span>{{plan.name}}</span>
+          <p>{{plan.description}}</p>
+          <p>Features:</p>
+          <ol>
+            <li></li>
+            <li></li>
+          </ol>
+          <ion-button (click)="subscribe(plan.id)" expand="full" color="success">Subscribe</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

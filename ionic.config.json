@@ -1,5 +1,7 @@
 {
   "name": "paypal-subscription-poc",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
